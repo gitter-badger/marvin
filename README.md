@@ -5,7 +5,7 @@ Codename: Marvin
 
 Virtual Tabletop application
 
-![visual concept](https://raw.githubusercontent.com/sethtrain/marvin/master/design/concept.png?token=AAAD_Ul2nhdApBOFoQPsyw-H_C6o4uFKks5XP9BIwA%3D%3D)
+![visual concept](https://raw.githubusercontent.com/sethtrain/marvin/master/design/concept.png?token=AAAD_eK-LNaqJxXAb67tqxQx2ROkFu_fks5XP9DAwA%3D%3D)
 
 Waffle.io
 ---------
