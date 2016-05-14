@@ -1,5 +1,6 @@
 Codename: Marvin
 ================
+[![In Progress](https://badge.waffle.io/sethtrain/marvin.svg?label=in%20progress&title=In%20Progress)](http://waffle.io/sethtrain/marvin)
 
 [http://muppet.wikia.com/wiki/Marvin_Suggs](http://muppet.wikia.com/wiki/Marvin_Suggs)
 
@@ -7,9 +8,16 @@ Virtual Tabletop application
 
 ![visual concept](https://raw.githubusercontent.com/sethtrain/marvin/master/design/concept.png?token=AAAD_eK-LNaqJxXAb67tqxQx2ROkFu_fks5XP9DAwA%3D%3D)
 
-Waffle.io
----------
-[https://waffle.io/sethtrain/marvin](https://waffle.io/sethtrain/marvin)
+Setup
+-----
+1. Setup an IAM role with admin access
+2. Fork and clone the repo, then change directory to `marvin`
+
+```bash
+npm install -g serverless
+npm install
+serverless project init
+```
 
 Initial Goals
 -------------

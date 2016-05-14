@@ -1,5 +1,7 @@
 {
   "name": "marvin",
   "custom": {},
-  "plugins": ["serverless-offline"]
+  "plugins": [
+    "serverless-offline"
+  ]
 }
