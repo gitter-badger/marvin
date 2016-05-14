@@ -1,5 +1,5 @@
 {
   "name": "marvin",
   "custom": {},
-  "plugins": []
+  "plugins": ["serverless-offline"]
 }
