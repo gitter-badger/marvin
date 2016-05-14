@@ -1,6 +1,6 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "The AWS CloudFormation template for this Serverless application's resources outside of Lambdas and Api Gateway",
+  "Description": "Marvin",
   "Resources": {
     "IamRoleLambda": {
       "Type": "AWS::IAM::Role",
@@ -39,6 +39,11 @@
                 "logs:PutLogEvents"
               ],
               "Resource": "arn:aws:logs:${region}:*:*"
+            },
+            {
+              "Effect": "Allow",
+              "Action": "*",
+              "Resource": "arn:aws:dynamodb:${region}:*:table/*"
             }
           ]
         },
@@ -47,6 +52,36 @@
             "Ref": "IamRoleLambda"
           }
         ]
+      }
+    },
+    "ChatTable": {
+      "Type" : "AWS::DynamoDB::Table",
+      "Properties" : {
+        "AttributeDefinitions" : [
+          {"AttributeName" : "game", "AttributeType" : "S"},
+          {"AttributeName" : "timestamp", "AttributeType" : "S"},
+          {"AttributeName" : "toPlayer", "AttributeType" : "S"}
+        ],
+        "GlobalSecondaryIndexes" : [],
+        "KeySchema" : [
+          {"AttributeName" : "game", "KeyType" : "HASH"},
+          {"AttributeName" : "timestamp", "KeyType" : "RANGE"}
+        ],
+        "LocalSecondaryIndexes" : [
+          {
+            "IndexName" : "private",
+            "KeySchema" : [
+              {"AttributeName" : "game", "KeyType" : "HASH"},
+              {"AttributeName" : "toPlayer", "KeyType" : "RANGE"}
+            ],
+            "Projection" : { "ProjectionType" : "ALL" }
+          }
+        ],
+        "ProvisionedThroughput" : {
+          "ReadCapacityUnits" : 1,
+          "WriteCapacityUnits" : 1
+        },
+        "TableName" : "${stage}-${project}-chat"
       }
     }
   },

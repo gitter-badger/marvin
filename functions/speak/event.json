@@ -1,0 +1,9 @@
+{
+  "project": "${project}",
+  "stage": "${stage}",
+  "body": {
+    "game": "The Messengers of Blemma",
+    "from": "Korm the Impossible",
+    "utterance": "Hello, world"
+  }
+}

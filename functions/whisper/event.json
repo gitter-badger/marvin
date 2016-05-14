@@ -1,0 +1,10 @@
+{
+  "project": "${project}",
+  "stage": "${stage}",
+  "body": {
+    "game": "The Messengers of Blemma",
+    "from": "Korm the Impossible",
+    "to": "Ducati Whine",
+    "whisper": "Hello, DM"
+  }
+}
