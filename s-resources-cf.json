@@ -55,33 +55,56 @@
       }
     },
     "ChatTable": {
-      "Type" : "AWS::DynamoDB::Table",
-      "Properties" : {
-        "AttributeDefinitions" : [
-          {"AttributeName" : "game", "AttributeType" : "S"},
-          {"AttributeName" : "timestamp", "AttributeType" : "S"},
-          {"AttributeName" : "toPlayer", "AttributeType" : "S"}
-        ],
-        "GlobalSecondaryIndexes" : [],
-        "KeySchema" : [
-          {"AttributeName" : "game", "KeyType" : "HASH"},
-          {"AttributeName" : "timestamp", "KeyType" : "RANGE"}
-        ],
-        "LocalSecondaryIndexes" : [
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "AttributeDefinitions": [
           {
-            "IndexName" : "private",
-            "KeySchema" : [
-              {"AttributeName" : "game", "KeyType" : "HASH"},
-              {"AttributeName" : "toPlayer", "KeyType" : "RANGE"}
-            ],
-            "Projection" : { "ProjectionType" : "ALL" }
+            "AttributeName": "game",
+            "AttributeType": "S"
+          },
+          {
+            "AttributeName": "timestamp",
+            "AttributeType": "S"
+          },
+          {
+            "AttributeName": "toPlayer",
+            "AttributeType": "S"
           }
         ],
-        "ProvisionedThroughput" : {
-          "ReadCapacityUnits" : 1,
-          "WriteCapacityUnits" : 1
+        "GlobalSecondaryIndexes": [],
+        "KeySchema": [
+          {
+            "AttributeName": "game",
+            "KeyType": "HASH"
+          },
+          {
+            "AttributeName": "timestamp",
+            "KeyType": "RANGE"
+          }
+        ],
+        "LocalSecondaryIndexes": [
+          {
+            "IndexName": "private",
+            "KeySchema": [
+              {
+                "AttributeName": "game",
+                "KeyType": "HASH"
+              },
+              {
+                "AttributeName": "toPlayer",
+                "KeyType": "RANGE"
+              }
+            ],
+            "Projection": {
+              "ProjectionType": "ALL"
+            }
+          }
+        ],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 1,
+          "WriteCapacityUnits": 1
         },
-        "TableName" : "${stage}-${project}-chat"
+        "TableName": "${stage}-${project}-chat"
       }
     }
   },

@@ -13,7 +13,7 @@
   },
   "endpoints": [
     {
-      "path": "speak",
+      "path": "chat",
       "method": "POST",
       "type": "AWS",
       "authorizationType": "none",

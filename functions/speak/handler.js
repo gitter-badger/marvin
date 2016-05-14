@@ -13,6 +13,9 @@ function store(utterance, cb) {
     },
     TableName: utterance.stage + "-" + utterance.project + "-chat"
   };
+  if (utterance.body.to) {
+    params.Item.toPlayer = { S: utterance.body.to }
+  }
   dynamodb.putItem(params, function(err) {
     cb(err ? err : null)
   });

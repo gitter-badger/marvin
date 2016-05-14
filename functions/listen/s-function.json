@@ -13,7 +13,7 @@
   },
   "endpoints": [
     {
-      "path": "listen",
+      "path": "chat",
       "method": "GET",
       "type": "AWS",
       "authorizationType": "none",
