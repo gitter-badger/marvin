@@ -1,6 +1,6 @@
 {
-  "project": "${project}",
-  "stage": "${stage}",
+  "project": "marvin",
+  "stage": "dev",
   "body": {
     "game": "The Messengers of Blemma",
     "from": "Korm the Impossible",
